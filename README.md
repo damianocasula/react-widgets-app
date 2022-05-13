@@ -1,6 +1,6 @@
 # react-widgets-app
 
-
+Done as part of the Modern React with Redux course by Steven Grider on Udemy.
 
 ---
 
