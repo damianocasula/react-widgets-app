@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Search = props => {
   const [term, setTerm] = useState('')
+
+  useEffect(() => {
+    console.log('asdfghj')
+  })
 
   return (
     <div>
