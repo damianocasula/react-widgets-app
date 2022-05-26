@@ -4,8 +4,8 @@ const Search = props => {
   const [term, setTerm] = useState('')
 
   useEffect(() => {
-    console.log('asdfghj')
-  })
+    console.log('I run at initial and when term is changed')
+  }, [term])
 
   return (
     <div>
