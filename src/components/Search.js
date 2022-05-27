@@ -25,6 +25,19 @@ const Search = props => {
     }
   }, [term])
 
+  const renderedResults = results.map(result => {
+    return (
+      <div className='item' key={result.pageid}>
+        <div className='content'>
+          <div className='header'>
+            {result.title}
+          </div>
+          {result.snippet}
+        </div>
+      </div>
+    )
+  })
+
   return (
     <div>
       <div className='ui form'>
@@ -36,6 +49,10 @@ const Search = props => {
             onChange={e => setTerm(e.target.value)}
           />
         </div>
+      </div>
+
+      <div className='ui celled list'>
+        {renderedResults}
       </div>
     </div>
   )
