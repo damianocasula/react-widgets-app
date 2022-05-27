@@ -29,10 +29,8 @@ const Search = props => {
     return (
       <div className='item' key={result.pageid}>
         <div className='content'>
-          <div className='header'>
-            {result.title}
-          </div>
-          {result.snippet}
+          <div className='header'>{result.title}</div>
+          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
         </div>
       </div>
     )
@@ -51,9 +49,7 @@ const Search = props => {
         </div>
       </div>
 
-      <div className='ui celled list'>
-        {renderedResults}
-      </div>
+      <div className='ui celled list'>{renderedResults}</div>
     </div>
   )
 }
