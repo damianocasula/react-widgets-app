@@ -28,6 +28,9 @@ const Search = props => {
   const renderedResults = results.map(result => {
     return (
       <div className='item' key={result.pageid}>
+        <div className='right floated content'>
+          <a className='ui button'>Go</a>
+        </div>
         <div className='content'>
           <div className='header'>{result.title}</div>
           <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
