@@ -20,16 +20,23 @@ const Search = props => {
       setResults(data.query.search)
     }
 
-    if (term) {
-      search()
-    }
+    setTimeout(() => {
+      if (term) {
+        search()
+      }
+    }, 500)
   }, [term])
 
   const renderedResults = results.map(result => {
     return (
       <div className='item' key={result.pageid}>
         <div className='right floated content'>
-          <a className='ui button'>Go</a>
+          <a
+            className='ui button'
+            href={`https://en.wikipedia.org?curid=${result.pageid}`}
+          >
+            Go
+          </a>
         </div>
         <div className='content'>
           <div className='header'>{result.title}</div>
