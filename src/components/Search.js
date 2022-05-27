@@ -20,11 +20,15 @@ const Search = props => {
       setResults(data.query.search)
     }
 
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       if (term) {
         search()
       }
     }, 500)
+
+    return () => {
+      clearTimeout(timeoutId)
+    }
   }, [term])
 
   const renderedResults = results.map(result => {
