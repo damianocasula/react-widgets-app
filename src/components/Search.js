@@ -24,7 +24,7 @@ const Search = props => {
       if (term) {
         search()
       }
-    }, 500)
+    }, 750)
 
     return () => {
       clearTimeout(timeoutId)
