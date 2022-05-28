@@ -33,6 +33,17 @@ const options = [
   }
 ]
 
+// useEffect(() => {
+//   document.body.addEventListener(
+//     "click",
+//     () => {
+//       setOpen(false);
+//     },
+//     { capture: true }
+//   );
+// }, []);
+
+
 const App = () => {
   const [selected, setSelected] = useState(options[0])
 
