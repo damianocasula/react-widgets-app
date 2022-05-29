@@ -40,9 +40,6 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     <div
       ref={ref}
       className='ui form'
-      style={{
-        padding: '1rem'
-      }}
     >
       <div className='field'>
         <label className='label'>Select a Color</label>

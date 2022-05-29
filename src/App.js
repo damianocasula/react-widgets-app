@@ -38,7 +38,14 @@ const App = () => {
   const [showDropdown, setShowDropdown] = useState(true)
 
   return (
-    <div>
+    <div
+      style={{
+        padding: '1rem',
+        display: 'flex',
+        gap: '1rem',
+        flexDirection: 'column'
+      }}
+    >
       {/* <Accordion items={items} /> */}
       {/* <Search /> */}
       <button onClick={() => setShowDropdown(!showDropdown)}>
@@ -51,6 +58,14 @@ const App = () => {
           onSelectedChange={setSelected}
         />
       ) : null}
+      <p
+        style={{
+          color: selected.value,
+          fontWeight: 'bold'
+        }}
+      >
+        This text is {selected.value}!
+      </p>
     </div>
   )
 }
