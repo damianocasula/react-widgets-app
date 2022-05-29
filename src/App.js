@@ -33,29 +33,24 @@ const options = [
   }
 ]
 
-// useEffect(() => {
-//   document.body.addEventListener(
-//     "click",
-//     () => {
-//       setOpen(false);
-//     },
-//     { capture: true }
-//   );
-// }, []);
-
-
 const App = () => {
   const [selected, setSelected] = useState(options[0])
+  const [showDropdown, setShowDropdown] = useState(true)
 
   return (
     <div>
       {/* <Accordion items={items} /> */}
       {/* <Search /> */}
-      <Dropdown
-        selected={selected}
-        options={options}
-        onSelectedChange={setSelected}
-      />
+      <button onClick={() => setShowDropdown(!showDropdown)}>
+        Toggle Dropdown
+      </button>
+      {showDropdown ? (
+        <Dropdown
+          selected={selected}
+          options={options}
+          onSelectedChange={setSelected}
+        />
+      ) : null}
     </div>
   )
 }
