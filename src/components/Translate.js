@@ -25,6 +25,7 @@ const Translate = () => {
         selected={language}
         onSelectedChange={setLanguage}
         options={options}
+        label='Select a language'
       />
     </div>
   )
