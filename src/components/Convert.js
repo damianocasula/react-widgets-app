@@ -4,21 +4,28 @@ import axios from 'axios'
 const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
 
 const Convert = ({ language, text }) => {
+  const [translatedText, setTranslatedText] = useState('')
+
   useEffect(() => {
-    axios.post(
-      'https://translation.googleapis.com/language/translate/v2',
-      {},
-      {
-        params: {
-          q: text,
-          target: language.value,
-          key: GOOGLE_API_KEY
+    const doTranslation = async () => {
+      const { data } = await axios.post(
+        'https://translation.googleapis.com/language/translate/v2',
+        {},
+        {
+          params: {
+            q: text,
+            target: language.value,
+            key: GOOGLE_API_KEY
+          }
         }
-      }
-    )
+      )
+
+      setTranslatedText(data.data.translations[0].translatedText)
+    }
+    doTranslation()
   }, [language, text])
 
-  return <div>Convert</div>
+  return <div>{translatedText}</div>
 }
 
 export default Convert
