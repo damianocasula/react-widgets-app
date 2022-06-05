@@ -25,7 +25,9 @@ const Convert = ({ language, text }) => {
     doTranslation()
   }, [language, text])
 
-  return <div>{translatedText}</div>
+  return <div>
+    <p>{translatedText}</p>
+  </div>
 }
 
 export default Convert
