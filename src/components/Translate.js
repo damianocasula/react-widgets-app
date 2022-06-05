@@ -28,8 +28,8 @@ const options = [
     value: 'es'
   },
   {
-    label: 'Turkish',
-    value: 'tr'
+    label: 'Icelandic',
+    value: 'is'
   }
 ]
 
