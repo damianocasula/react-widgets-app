@@ -14,6 +14,22 @@ const options = [
   {
     label: 'Hindi',
     value: 'hi'
+  },
+  {
+    label: 'Portuguese',
+    value: 'pt'
+  },
+  {
+    label: 'Russian',
+    value: 'ru'
+  },
+  {
+    label: 'Spanish',
+    value: 'es'
+  },
+  {
+    label: 'Turkish',
+    value: 'tr'
   }
 ]
 
