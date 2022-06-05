@@ -34,6 +34,52 @@ const options = [
   }
 ]
 
+const showAccordion = () => {
+  if (window.location.pathname === '/') {
+    return <Accordion items={items} />
+  }
+}
+
+const showList = () => {
+  if (window.location.pathname === '/list') {
+    return <Search />
+  }
+}
+
+const showDropdown = () => {
+  //   if (window.location.pathname === '/dropdown') {
+  //     return (
+  //       <>
+  //         <button onClick={() => setShowDropdown(!showDropdown)}>
+  //           Toggle Dropdown
+  //         </button>
+  //         {showDropdown ? (
+  //           <Dropdown
+  //             selected={selected}
+  //             options={options}
+  //             onSelectedChange={setSelected}
+  //           />
+  //         ) : null}
+  //         <p
+  //           style={{
+  //             color: selected.value,
+  //             fontWeight: 'bold'
+  //           }}
+  //         >
+  //           This text is {selected.value}!
+  //         </p>
+  //       </>
+  //     )
+  //   }
+  return null
+}
+
+const showTranslate = () => {
+  if (window.location.pathname === '/translate') {
+    return <Translate />
+  }
+}
+
 const App = () => {
   // const [selected, setSelected] = useState(options[0])
   // const [showDropdown, setShowDropdown] = useState(true)
@@ -47,27 +93,10 @@ const App = () => {
         flexDirection: 'column'
       }}
     >
-      {/* <Accordion items={items} /> */}
-      {/* <Search /> */}
-      {/* <button onClick={() => setShowDropdown(!showDropdown)}>
-        Toggle Dropdown
-      </button>
-      {showDropdown ? (
-        <Dropdown
-          selected={selected}
-          options={options}
-          onSelectedChange={setSelected}
-        />
-      ) : null}
-      <p
-        style={{
-          color: selected.value,
-          fontWeight: 'bold'
-        }}
-      >
-        This text is {selected.value}!
-      </p> */}
-      <Translate />
+      {showAccordion()}
+      {showList()}
+      {showDropdown()}
+      {showTranslate()}
     </div>
   )
 }
